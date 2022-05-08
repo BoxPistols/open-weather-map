@@ -24,8 +24,8 @@
           <h3>世界の天気</h3>
           <div class="box info">
             <div class="flex flex-ai-center">
-              <div class="place"></div>
               <div id="icon"><img id="img" /></div>
+              <div class="place"></div>
             </div>
           </div>
 
@@ -35,58 +35,61 @@
               <div class="alert">
                 〜アラートボックス〜
               </div>
-              <div class="button_close">閉じる</div>
+              <div class="button_close">閉じる or ESCキー</div>
             </div>
           </div>
           <!-- <button class="button_open">通知が出るよ</button> -->
 
-          <label>
-            都市名：<small>半角英字で入力</small>
-          </label>
-          <div class="flex flex-row flex-ai-center">
-            <div>
-              <input id="cityname" type="text" size="14" maxlength="14" minlength="2" placeholder="Tokyo" />
-            </div>
-            <div class="flex">
-              <button id="btn" class="btn-primary">検索</button><br />
-            </div>
-          </div>
-          <ul>
-            <li>
-              場所:
-              <span class="place">
-                -
-              </span>
-            </li>
-            <li>最高気温:
-              <span id="temp_max">
-                -
-              </span>℃
-            </li>
-            <li>最低気温:
-              <span id="temp_min">
-                -
-              </span>℃
-            </li>
-            <li>湿度:
-              <span id="humidity">
-                -
-              </span>%
-            </li>
-            <li>風速:
-              <span id="speed">
-                -
-              </span>m/s
-            </li>
-            <li>
-              <div class="flex flex-ai-center">
-                <div>天気:
-                  <span id="weather"></span>
-                </div>
-                <div id="icon"><img id="img" /></div>
+          <div class="box">
+
+            <label>
+              都市名：<small>英字で入力 *14文字以内</small>
+            </label>
+            <div class="flex flex-row flex-ai-center">
+              <div>
+                <input id="cityname" type="text" size="14" maxlength="14" minlength="2" placeholder="Tokyo" />
               </div>
-            </li>
-          </ul>
+              <div class="flex">
+                <button id="btn" class="btn-primary">検索</button><br />
+              </div>
+            </div>
+            <ul>
+              <li>
+                場所:
+                <span class="place">
+                  -
+                </span>
+              </li>
+              <li>最高気温:
+                <span id="temp_max">
+                  -
+                </span>℃
+              </li>
+              <li>最低気温:
+                <span id="temp_min">
+                  -
+                </span>℃
+              </li>
+              <li>湿度:
+                <span id="humidity">
+                  -
+                </span>%
+              </li>
+              <li>風速:
+                <span id="speed">
+                  -
+                </span>m/s
+              </li>
+              <li>
+                <div class="flex flex-ai-center">
+                  <div>天気:
+                    <span id="weather"></span>
+                  </div>
+                  <div id="icon"><img id="img" /></div>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

@@ -3,6 +3,7 @@ const API_URL = "https://api.openweathermap.org/data/2.5/weather?q=";
 const API_KEY = "93e8bb3b9a576c3cfb39ffc79ce8d751";
 const API_UNITS = "&units=metric&appid=";
 const IMAGE_ICON = "http://openweathermap.org/img/w/";
+const ALERT_TIME = 7000;
 
 $(function () {
   $("#btn").on("click", function () {
@@ -13,7 +14,7 @@ $(function () {
       $(".alert").text("都市名を入力してください");
       $(".alert-box")
         .slideDown()
-        .delay(3000)
+        .delay(ALERT_TIME)
         .fadeOut()
         .removeClass("danger success");
       return false;
@@ -30,7 +31,7 @@ $(function () {
           .removeClass("danger")
           .addClass("success")
           .slideDown()
-          .delay(3000)
+          .delay(ALERT_TIME)
           .fadeOut();
         // DEBUG: 取得データを表示
         $(".place").text(data.name); //最温
@@ -49,18 +50,31 @@ $(function () {
           .removeClass("success")
           .addClass("danger")
           .slideDown()
-          .delay(3000)
+          .delay(ALERT_TIME)
           .fadeOut();
       });
   });
 });
 
-$(".button_close").click(function (e) {
-  e.preventDefault();
+//　アラートを消す
+const removeAlert = () => {
   $(".alert-box")
     .stop(true) /*遅延を無効*/
     .fadeOut(0)
     .removeClass("danger success");
+  return;
+};
+
+$(".button_close").click(function (e) {
+  e.preventDefault();
+  removeAlert();
+});
+
+$(window).keyup(function (e) {
+  // ESCキーが押されたら
+  if (e.keyCode == 27) {
+    removeAlert();
+  }
 });
 
 /*

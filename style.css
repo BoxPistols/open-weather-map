@@ -13,6 +13,7 @@ h1 {
   text-align: center;
   text-transform: uppercase;
   vertical-align: middle;
+  margin-top: 8vh;
 
   color: var(--color-primary);
   font-weight: 200;
@@ -40,6 +41,10 @@ button {
 input[type="text"] {
   min-width: 15em;
   margin: 0;
+}
+input[type="text"]::placeholder {
+  color: lightgray;
+  font-style: italic;
 }
 
 /* アラート表示 */
@@ -92,12 +97,17 @@ input[type="text"] {
 .box.info .place,
 .box.info img {
   font-size: 2rem;
-  width: 75px;
+  width: 60px;
   text-transform: uppercase;
 }
-.box.info > div {
-  justify-content: space-evenly;
+.box.info img {
+  margin-right: 12px;
 }
+
+/* .box.info > div {
+  justify-content: space-evenly;
+} */
+
 /*
 .button_open {
   position: absolute;
