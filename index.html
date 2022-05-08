@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/asagiri@0.1.1/style.min.css">
+  <title>Open Weather Map</title>
+  <style>
+    img {
+      vertical-align: bottom;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Open Weather Map</h1>
+  <div class="wrap">
+    <div class="flex flex-column">
+      <div class="container">
+        <div class="row">
+          <div class="column column-50 box">
+            <h3>世界の天気</h3>
+            <label> 都市名：</label>
+            <input id="cityname" type="text" size="14" maxlength="14" placeholder="Tokyo" />
+            <button id="btn">検索</button><br />
+            <ul>
+              <li>
+                場所:
+                <span id="place"> - </span>
+              </li>
+              <li>最高気温: <span id="temp_max"> - </span>℃</li>
+              <li>最低気温: <span id="temp_min"> - </span>℃</li>
+              <li>湿度: <span id="humidity"> - </span>%</li>
+              <li>風速: <span id="speed"> - </span>m/s</li>
+              <li>
+                <div class="flex flex-ai-center">
+                  <div>天気: <span id="weather"></span></div>
+                  <div id="icon"><img id="img" /></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
