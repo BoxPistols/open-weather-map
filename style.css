@@ -59,6 +59,10 @@ input[type="text"] {
   background-color: var(--color-danger-light);
 }
 
+.alert-box.success {
+  background-color: var(--color-success-light);
+}
+
 .alert {
   margin-bottom: 5px;
 }

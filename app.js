@@ -11,7 +11,11 @@ $(function () {
       $("#cityname").focus();
       // アラート通知表示
       $(".alert").text("都市名を入力してください");
-      $(".alert-box").slideDown().delay(2000).fadeOut().removeClass("danger");
+      $(".alert-box")
+        .slideDown()
+        .delay(2000)
+        .fadeOut()
+        .removeClass("danger success");
       return false;
     }
     // URLを作成
@@ -21,6 +25,13 @@ $(function () {
     })
       // AJAX通信が成功した場合
       .done(function (data) {
+        $(".alert").text("通信に成功しました");
+        $(".alert-box")
+          .removeClass("danger")
+          .addClass("success")
+          .slideDown()
+          .delay(2000)
+          .fadeOut();
         // DEBUG: 取得データを表示
         $("#place").text(data.name); //最温
         $("#temp_max").text(data.main.temp_max); //最低気温
@@ -34,10 +45,22 @@ $(function () {
       // AJAX通信が失敗した場合
       .fail(function (data) {
         $(".alert").text("通信に失敗しました");
-        $(".alert-box").addClass("danger");
-        $(".alert-box").slideDown().delay(2000).fadeOut();
+        $(".alert-box")
+          .removeClass("success")
+          .addClass("danger")
+          .slideDown()
+          .delay(2000)
+          .fadeOut();
       });
   });
+});
+
+$(".button_close").click(function (e) {
+  e.preventDefault();
+  $(".alert-box")
+    .stop(true) /*遅延を無効*/
+    .fadeOut(0)
+    .removeClass("danger success");
 });
 
 /*
@@ -49,11 +72,3 @@ $(".button_open").click(function () {
     .fadeOut();
 });
 */
-
-$(".button_close").click(function (e) {
-  e.preventDefault();
-  $(".alert-box")
-    .stop(true) /*遅延を無効*/
-    .fadeOut(0)
-    .removeClass("danger");
-});
