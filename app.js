@@ -13,7 +13,7 @@ $(function () {
       $(".alert").text("都市名を入力してください");
       $(".alert-box")
         .slideDown()
-        .delay(2000)
+        .delay(3000)
         .fadeOut()
         .removeClass("danger success");
       return false;
@@ -30,17 +30,17 @@ $(function () {
           .removeClass("danger")
           .addClass("success")
           .slideDown()
-          .delay(2000)
+          .delay(3000)
           .fadeOut();
         // DEBUG: 取得データを表示
-        $("#place").text(data.name); //最温
+        $(".place").text(data.name); //最温
         $("#temp_max").text(data.main.temp_max); //最低気温
         $("#temp_min").text(data.main.temp_min); //湿度
         $("#humidity").text(data.main.humidity); //速
         $("#speed").text(data.wind.speed); //天気
         $("#weather").text(data.weather[0].main); //天気アイコン画像
-        $("img").attr("src", IMAGE_ICON + data.weather[0].icon + ".png");
-        $("img").attr("alt", data.weather[0].main);
+        $("#img").attr("src", IMAGE_ICON + data.weather[0].icon + ".png");
+        $("#img").attr("alt", data.weather[0].main);
       })
       // AJAX通信が失敗した場合
       .fail(function (data) {
@@ -49,7 +49,7 @@ $(function () {
           .removeClass("success")
           .addClass("danger")
           .slideDown()
-          .delay(2000)
+          .delay(3000)
           .fadeOut();
       });
   });
