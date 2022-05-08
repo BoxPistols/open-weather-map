@@ -1,5 +1,11 @@
 # open-weather-map
 
+Github
+https://github.com/BoxPistols/open-weather-map
+
+GithubPage:
+https://boxpistols.github.io/open-weather-map/
+
 Weather API Ajax
 
 
