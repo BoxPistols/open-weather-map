@@ -1,101 +1,91 @@
 <!DOCTYPE html>
 <html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/asagiri@0.1.1/style.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Open Weather Map</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/asagiri@0.1.1/style.min.css">
-  <link rel="stylesheet" href="style.css">
-  <title>Open Weather Map</title>
-</head>
+  <body>
+    <!-- Call Modal -->
+    <div class="alert-box">
+      <div class="flex flex-ai-center flex-jc-center">
+        <div class="alert">〜アラートボックス〜</div>
+        <div class="button_close">閉じる or ESCキー</div>
+      </div>
+    </div>
 
-<body>
-  <div class="wrap">
-    <div class="container">
+    <div class="wrap">
+      <div class="container">
+        <h1>
+          <img src="img/cloudy-day-96.png" alt="" />
+          Open Weather Map
+        </h1>
 
-      <h1>
-        <img src="img/cloudy-day-96.png" alt="">
-        Open Weather Map
-      </h1>
-      <div class="row">
-        <div class="flex flex-column box">
+        <div class="row">
+          <div class="flex flex-column">
+            <h3>世界の天気</h3>
 
-          <h3>世界の天気</h3>
-          <div class="box info">
-            <div class="flex flex-ai-center">
-              <div id="icon"><img id="img" /></div>
-              <div class="place"></div>
-            </div>
-          </div>
-
-          <!-- Call Modal -->
-          <div class="alert-box">
-            <div class="flex flex-ai-center flex-jc-center">
-              <div class="alert">
-                〜アラートボックス〜
-              </div>
-              <div class="button_close">閉じる or ESCキー</div>
-            </div>
-          </div>
-          <!-- <button class="button_open">通知が出るよ</button> -->
-
-          <div class="box">
-
-            <label>
-              都市名：<small>英字で入力 *14文字以内</small>
-            </label>
-            <div class="flex flex-row flex-ai-center">
-              <div>
-                <input id="cityname" type="text" size="14" maxlength="14" minlength="2" placeholder="Tokyo" />
-              </div>
-              <div class="flex">
-                <button id="btn" class="btn-primary">検索</button><br />
+            <div class="box info">
+              <div class="flex flex-ai-center">
+                <div id="icon"><img id="img" src="" /></div>
+                <div class="place"></div>
               </div>
             </div>
-            <ul>
-              <li>
-                場所:
-                <span class="place">
-                  -
-                </span>
-              </li>
-              <li>最高気温:
-                <span id="temp_max">
-                  -
-                </span>℃
-              </li>
-              <li>最低気温:
-                <span id="temp_min">
-                  -
-                </span>℃
-              </li>
-              <li>湿度:
-                <span id="humidity">
-                  -
-                </span>%
-              </li>
-              <li>風速:
-                <span id="speed">
-                  -
-                </span>m/s
-              </li>
-              <li>
-                <div class="flex flex-ai-center">
-                  <div>天気:
-                    <span id="weather"></span>
-                  </div>
-                  <div id="icon"><img id="img" /></div>
+
+            <!-- <button class="button_open">通知が出るよ</button> -->
+            <div class="box">
+              <label> 都市名：<small>英字で入力 *14文字以内</small> </label>
+
+              <div class="weathe-call">
+                <div class="flex flex-row flex-ai-center flex-jc-between">
+                  <input
+                    id="cityname"
+                    type="text"
+                    size="14"
+                    maxlength="14"
+                    minlength="2"
+                    placeholder="Tokyo"
+                  />
                 </div>
-              </li>
-            </ul>
+                <div class="flex">
+                  <button id="btn" class="btn-primary">検索</button><br />
+                </div>
+              </div>
+
+              <div class="list">
+                <ul>
+                  <li>
+                    場所:
+                    <span class="place"> - </span>
+                  </li>
+                  <li>最高気温: <span id="temp_max"> - </span>℃</li>
+                  <li>最低気温: <span id="temp_min"> - </span>℃</li>
+                  <li>湿度: <span id="humidity"> - </span>%</li>
+                  <li>風速: <span id="speed"> - </span>m/s</li>
+                  <li>
+                    <div class="flex flex-ai-center">
+                      <div>
+                        天気:
+                        <span id="weather"></span>
+                      </div>
+                      <div id="icon"><img id="img" /></div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="app.js"></script>
-</body>
-
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="app.js"></script>
+  </body>
 </html>
